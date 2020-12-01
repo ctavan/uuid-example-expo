@@ -4,6 +4,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import { v1 as uuidv1, v4 as uuidv4, v3 as uuidv3, v5 as uuidv5 } from 'uuid';
+import { nanoid } from 'nanoid';
 
 export default function App() {
   const MY_NAMESPACE = '55238d15-c926-4598-b49d-cf4e913ba13c';
@@ -14,6 +15,10 @@ export default function App() {
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
           <View style={styles.body}>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>nanoid()</Text>
+              <Text style={styles.sectionDescription}>{nanoid()}</Text>
+            </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>uuidv1()</Text>
               <Text style={styles.sectionDescription}>{uuidv1()}</Text>
